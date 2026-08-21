@@ -1,0 +1,3 @@
+<?php $pageTitle='Gallery';$theme='pink';include 'includes/header.php';$rows=$pdo->query("SELECT * FROM gallery ORDER BY id DESC")->fetchAll(); ?>
+<section class="py-5"><div class="container"><div class="row g-4"><?php foreach($rows as $g): ?><div class="col-6 col-lg-3"><div class="content-card"><img onerror="this.style.display='none'" src="<?= htmlspecialchars($g['image']) ?>" class="w-100" style="height:240px;object-fit:cover" alt="<?= htmlspecialchars($g['title']) ?>"><div class="p-3 fw-bold"><?= htmlspecialchars($g['title']) ?></div></div></div><?php endforeach; ?></div></div></section>
+<?php include 'includes/footer.php'; ?>
